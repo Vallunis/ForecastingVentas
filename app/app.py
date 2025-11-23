@@ -55,7 +55,7 @@ def load_data():
     """Cargar datos de inferencia y modelo"""
     try:
         # Cargar dataframe de inferencia (ruta relativa desde app/)
-        df = pd.read_csv('../data/processed/inferencia_df_transformado.csv')
+        df = pd.read_csv('data/processed/inferencia_df_transformado.csv')
         df['fecha'] = pd.to_datetime(df['fecha'])
         return df
     except Exception as e:
@@ -66,7 +66,7 @@ def load_data():
 def load_model():
     """Cargar modelo entrenado"""
     try:
-        model = joblib.load('../models/modelo_final.joblib')
+        model = joblib.load('models/modelo_final.joblib')
         return model
     except Exception as e:
         st.error(f"❌ Error al cargar el modelo: {e}")
